@@ -1,0 +1,159 @@
+[
+  {
+    "id": 1,
+    "name": "AirPods Pro Max",
+    "category": "Auriculares",
+    "price": 299,
+    "originalPrice": 399,
+    "image": "🎧",
+    "features": ["Cancelación de ruido", "20h batería", "Bluetooth 5.0"],
+    "isOnSale": true,
+    "featured": true,
+    "available": true
+  },
+  {
+    "id": 2,
+    "name": "Cargador Rápido 65W",
+    "category": "Cargadores",
+    "price": 49,
+    "image": "🔌",
+    "features": ["Carga rápida", "USB-C", "Multipuerto"],
+    "isNew": true,
+    "featured": true,
+    "available": false
+  },
+  {
+    "id": 3,
+    "name": "Smartwatch Elite",
+    "category": "Wearables",
+    "price": 199,
+    "image": "⌚",
+    "features": ["GPS", "Monitor cardíaco", "5 días batería"],
+    "featured": true,
+    "available": true
+  },
+  {
+    "id": 4,
+    "name": "Auriculares Sport",
+    "category": "Auriculares",
+    "price": 89,
+    "originalPrice": 129,
+    "image": "🎵",
+    "features": ["Resistente al agua", "12h batería", "Gancho deportivo"],
+    "isOnSale": true,
+    "featured": true,
+    "available": true
+  },
+  {
+    "id": 5,
+    "name": "Power Bank 20000mAh",
+    "category": "Accesorios",
+    "price": 39,
+    "image": "🔋",
+    "features": ["20000mAh", "Carga inalámbrica", "LED display"],
+    "featured": true,
+    "available": false
+  },
+  {
+    "id": 6,
+    "name": "Hub USB-C Premium",
+    "category": "Accesorios",
+    "price": 79,
+    "image": "💻",
+    "features": ["7 puertos", "4K HDMI", "100W PD"],
+    "isNew": true,
+    "featured": true,
+    "available": true
+  },
+  {
+    "id": 7,
+    "name": "Teclado Mecánico RGB",
+    "category": "Accesorios",
+    "price": 129,
+    "originalPrice": 179,
+    "image": "⌨️",
+    "features": ["Switches mecánicos", "RGB personalizable", "Anti-ghosting"],
+    "isOnSale": true,
+    "available": true
+  },
+  {
+    "id": 8,
+    "name": "Mouse Gaming Pro",
+    "category": "Accesorios",
+    "price": 69,
+    "image": "🖱️",
+    "features": ["12000 DPI", "8 botones", "Sensor óptico"],
+    "isNew": true,
+    "available": false
+  },
+  {
+    "id": 9,
+    "name": "Webcam 4K Ultra",
+    "category": "Accesorios",
+    "price": 149,
+    "image": "📹",
+    "features": ["4K recording", "Auto-focus", "Micrófono integrado"],
+    "available": true
+  },
+  {
+    "id": 10,
+    "name": "Auriculares Gaming",
+    "category": "Auriculares",
+    "price": 119,
+    "originalPrice": 159,
+    "image": "🎮",
+    "features": ["Sonido 7.1", "Micrófono retráctil", "LED RGB"],
+    "isOnSale": true,
+    "available": true
+  },
+  {
+    "id": 11,
+    "name": "Monitor 4K 27 pulgadas",
+    "category": "Monitores",
+    "price": 399,
+    "originalPrice": 499,
+    "image": "🖥️",
+    "features": ["4K UHD", "HDR10", "75Hz"],
+    "isOnSale": true,
+    "available": true
+  },
+  {
+    "id": 12,
+    "name": "Soporte para Laptop",
+    "category": "Accesorios",
+    "price": 35,
+    "image": "💾",
+    "features": ["Ajustable", "Aluminio", "Ventilación mejorada"],
+    "available": false
+  },
+  {
+    "id": 13,
+    "name": "Cargador Inalámbrico",
+    "category": "Cargadores",
+    "price": 29,
+    "image": "📱",
+    "features": ["15W rápido", "Compatible Qi", "LED indicador"],
+    "isNew": true,
+    "available": true
+  },
+  {
+    "id": 14,
+    "name": "Cable USB-C 3m",
+    "category": "Cables",
+    "price": 19,
+    "originalPrice": 29,
+    "image": "🔗",
+    "features": ["3 metros", "100W PD", "Transferencia rápida"],
+    "isOnSale": true,
+    "available": true
+  },
+  {
+    "id": 15,
+    "name": "Altavoz Bluetooth Portátil",
+    "category": "Audio",
+    "price": 89,
+    "image": "🔊",
+    "features": ["Resistente al agua", "20h batería", "Sonido 360°"],
+    "available": true
+  }
+]
