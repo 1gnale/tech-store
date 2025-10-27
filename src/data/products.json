@@ -1,159 +1,139 @@
 [
   {
     "id": 1,
-    "name": "AirPods Pro Max",
+    "name": "Auriculares Air 31",
     "category": "Auriculares",
-    "price": 299,
-    "originalPrice": 399,
-    "image": "🎧",
-    "features": ["Cancelación de ruido", "20h batería", "Bluetooth 5.0"],
+    "price": 13500,
+    "originalPrice": 15000,
+    "image": "https://i.ibb.co/SDm73R9W/IMG-20251024-WA0066.jpg",
+    "images": [
+      "https://i.ibb.co/HDG05spT/IMG-20251024-WA0061.jpg",
+      "https://i.ibb.co/zHntHzcZ/IMG-20251024-WA0062.jpg",
+      "https://i.ibb.co/8LB8Gj6f/IMG-20251024-WA0063.jpg",
+      "https://i.ibb.co/5XJ1zYng/IMG-20251024-WA0064.jpg",
+      "https://i.ibb.co/dJGBtrFc/IMG-20251024-WA0065.jpg",
+      "https://i.ibb.co/SDm73R9W/IMG-20251024-WA0066.jpg"
+    ],
+    "features": [
+      "6h de uso continuo.",
+      "Cancelación de ruido",
+      "Bluetooth 5.3"
+    ],
+    "isNew": true,
     "isOnSale": true,
     "featured": true,
     "available": true
   },
   {
     "id": 2,
-    "name": "Cargador Rápido 65W",
-    "category": "Cargadores",
-    "price": 49,
-    "image": "🔌",
-    "features": ["Carga rápida", "USB-C", "Multipuerto"],
+    "name": "Smartwatch Ultra 8",
+    "category": "Accesorios",
+    "price": 30000,
+    "originalPrice": 35500,
+    "image": "https://i.ibb.co/8ws4G7G/IMG-20251024-WA0043.jpg",
+    "images": [
+      "https://i.ibb.co/tw3QwsWj/IMG-20251024-WA0044.jpg",
+      "https://i.ibb.co/8ws4G7G/IMG-20251024-WA0043.jpg",
+      "https://i.ibb.co/S4MTVGjf/IMG-20251024-WA0036.jpg",
+      "https://i.ibb.co/tPwS2nH0/IMG-20251024-WA0038.jpg",
+      "https://i.ibb.co/RkndVtpY/IMG-20251024-WA0039.jpg"
+    ],
+    "features": [
+      "Monitoreo de signos vitales",
+      "Carga inalámbrica",
+      "36h de batería"
+    ],
     "isNew": true,
     "featured": true,
-    "available": false
+    "available": true
   },
   {
     "id": 3,
-    "name": "Smartwatch Elite",
-    "category": "Wearables",
-    "price": 199,
-    "image": "⌚",
-    "features": ["GPS", "Monitor cardíaco", "5 días batería"],
+    "name": "Parlante Mini  A005",
+    "category": "Parlantes",
+    "price": 13000,
+    "image": "https://i.ibb.co/rRMhMztg/IMG-20251024-WA0045.jpg",
+    "images": [
+      "https://i.ibb.co/rRMhMztg/IMG-20251024-WA0045.jpg",
+      "https://i.ibb.co/fYK1wjjf/IMG-20251024-WA0047.jpg",
+      "https://i.ibb.co/jv9GfYLB/IMG-20251024-WA0048.jpg",
+      "https://i.ibb.co/kgMDMgq7/IMG-20251024-WA0049.jpg",
+      "https://i.ibb.co/8DFMyfQt/IMG-20251024-WA0050.jpg"
+    ],
+    "features": [
+      "Luces RGB con distintos modos",
+      "Conexión wireless",
+      "Modo radio"
+    ],
     "featured": true,
     "available": true
   },
   {
     "id": 4,
-    "name": "Auriculares Sport",
-    "category": "Auriculares",
-    "price": 89,
-    "originalPrice": 129,
-    "image": "🎵",
-    "features": ["Resistente al agua", "12h batería", "Gancho deportivo"],
-    "isOnSale": true,
+    "name": "Smartwatch Ultra 8 + Protector de pantalla",
+    "category": "Accesorios",
+    "price": 32000,
+    "originalPrice": 38500,
+    "image": "https://i.ibb.co/BK3VVJyB/IMG-20251024-WA0041.jpg",
+    "images": [
+      "https://i.ibb.co/BK3VVJyB/IMG-20251024-WA0041.jpg",
+      "https://i.ibb.co/tw3QwsWj/IMG-20251024-WA0044.jpg",
+      "https://i.ibb.co/8ws4G7G/IMG-20251024-WA0043.jpg",
+      "https://i.ibb.co/S4MTVGjf/IMG-20251024-WA0036.jpg",
+      "https://i.ibb.co/tPwS2nH0/IMG-20251024-WA0038.jpg",
+      "https://i.ibb.co/RkndVtpY/IMG-20251024-WA0039.jpg",
+      "https://i.ibb.co/MkC8zLRR/IMG-20251024-WA0059.jpg",
+      "https://i.ibb.co/bR15GRg1/IMG-20251024-WA0060.jpg"
+    ],
+    "features": [
+      "Descuento por combo",
+      "Protección adicional para tu Smartwatch",
+      "Aplicación de protector sin burbujas"
+    ],
+    "isNew": true,
     "featured": true,
     "available": true
   },
   {
     "id": 5,
-    "name": "Power Bank 20000mAh",
-    "category": "Accesorios",
-    "price": 39,
-    "image": "🔋",
-    "features": ["20000mAh", "Carga inalámbrica", "LED display"],
+    "name": "USB-C Carga Rápida",
+    "category": "Cables",
+    "price": 3000,
+    "image": "https://i.ibb.co/bjpgZZNM/IMG-20251024-WA0054.jpg",
+    "images": [
+      "https://i.ibb.co/QFT6FHtS/IMG-20251024-WA0051.jpg",
+      "https://i.ibb.co/1Bp44jf/IMG-20251024-WA0052.jpg",
+      "https://i.ibb.co/R4ttSPtz/IMG-20251024-WA0053.jpg",
+      "https://i.ibb.co/bjpgZZNM/IMG-20251024-WA0054.jpg",
+      "https://i.ibb.co/B5f1xzYC/IMG-20251024-WA0057.jpg"
+    ],
+    "features": [
+      "35cm de longitud",
+      "7.1 Amperios",
+      "Carga y transferencia rápida",
+      "Variedad de colores"
+    ],
     "featured": true,
-    "available": false
+    "available": true
   },
   {
     "id": 6,
-    "name": "Hub USB-C Premium",
-    "category": "Accesorios",
-    "price": 79,
-    "image": "💻",
-    "features": ["7 puertos", "4K HDMI", "100W PD"],
+    "name": "Protector de pantalla para Smartwatch",
+    "category": "Complementos",
+    "price": 3000,
+    "image": "https://i.ibb.co/bR15GRg1/IMG-20251024-WA0060.jpg",
+    "images": [
+      "https://i.ibb.co/bR15GRg1/IMG-20251024-WA0060.jpg",
+      "https://i.ibb.co/MkC8zLRR/IMG-20251024-WA0059.jpg",
+      "https://i.ibb.co/BK3VVJyB/IMG-20251024-WA0041.jpg"
+    ],
+    "features": [
+      "Protección total contra rayones",
+      "Alta sensibilidad táctil",
+      "Fácil instalación"
+    ],
     "isNew": true,
     "featured": true,
-    "available": true
-  },
-  {
-    "id": 7,
-    "name": "Teclado Mecánico RGB",
-    "category": "Accesorios",
-    "price": 129,
-    "originalPrice": 179,
-    "image": "⌨️",
-    "features": ["Switches mecánicos", "RGB personalizable", "Anti-ghosting"],
-    "isOnSale": true,
-    "available": true
-  },
-  {
-    "id": 8,
-    "name": "Mouse Gaming Pro",
-    "category": "Accesorios",
-    "price": 69,
-    "image": "🖱️",
-    "features": ["12000 DPI", "8 botones", "Sensor óptico"],
-    "isNew": true,
-    "available": false
-  },
-  {
-    "id": 9,
-    "name": "Webcam 4K Ultra",
-    "category": "Accesorios",
-    "price": 149,
-    "image": "📹",
-    "features": ["4K recording", "Auto-focus", "Micrófono integrado"],
-    "available": true
-  },
-  {
-    "id": 10,
-    "name": "Auriculares Gaming",
-    "category": "Auriculares",
-    "price": 119,
-    "originalPrice": 159,
-    "image": "🎮",
-    "features": ["Sonido 7.1", "Micrófono retráctil", "LED RGB"],
-    "isOnSale": true,
-    "available": true
-  },
-  {
-    "id": 11,
-    "name": "Monitor 4K 27 pulgadas",
-    "category": "Monitores",
-    "price": 399,
-    "originalPrice": 499,
-    "image": "🖥️",
-    "features": ["4K UHD", "HDR10", "75Hz"],
-    "isOnSale": true,
-    "available": true
-  },
-  {
-    "id": 12,
-    "name": "Soporte para Laptop",
-    "category": "Accesorios",
-    "price": 35,
-    "image": "💾",
-    "features": ["Ajustable", "Aluminio", "Ventilación mejorada"],
-    "available": false
-  },
-  {
-    "id": 13,
-    "name": "Cargador Inalámbrico",
-    "category": "Cargadores",
-    "price": 29,
-    "image": "📱",
-    "features": ["15W rápido", "Compatible Qi", "LED indicador"],
-    "isNew": true,
-    "available": true
-  },
-  {
-    "id": 14,
-    "name": "Cable USB-C 3m",
-    "category": "Cables",
-    "price": 19,
-    "originalPrice": 29,
-    "image": "🔗",
-    "features": ["3 metros", "100W PD", "Transferencia rápida"],
-    "isOnSale": true,
-    "available": true
-  },
-  {
-    "id": 15,
-    "name": "Altavoz Bluetooth Portátil",
-    "category": "Audio",
-    "price": 89,
-    "image": "🔊",
-    "features": ["Resistente al agua", "20h batería", "Sonido 360°"],
     "available": true
   }
 ]

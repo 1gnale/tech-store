@@ -8,40 +8,25 @@ interface Feature {
 
 const features: Feature[] = [
   {
-    icon: "🚚",
-    title: "Envío Gratis",
-    description: "Envío gratuito en pedidos superiores a $50. Recibe tus productos en 24-48 horas."
+    icon: "👌​",
+    title: "Confianza garantizada",
+    description: "Todos nuestros productos son probados previamente para asegurar su calidad y funcionamiento."
   },
   {
     icon: "🔒",
-    title: "Compra Segura",
-    description: "Transacciones 100% seguras con encriptación SSL y protección de datos."
-  },
-  {
-    icon: "⚡",
-    title: "Tecnología Avanzada",
-    description: "Productos con la última tecnología y certificaciones de calidad internacional."
-  },
-  {
-    icon: "🎯",
-    title: "Garantía Premium",
-    description: "2 años de garantía en todos nuestros productos con soporte técnico 24/7."
+    title: "Compra Segura con garantía",
+    description: "Todas las compras cuentan con 7 días de cambio directo contra fallos de fábrica."
   },
   {
     icon: "💬",
-    title: "Soporte Experto",
-    description: "Equipo de expertos disponible para ayudarte con cualquier consulta técnica."
-  },
-  {
-    icon: "♻️",
-    title: "Eco-Friendly",
-    description: "Comprometidos con el medio ambiente, empaques reciclables y procesos sostenibles."
+    title: "Soporte y Asesoría",
+    description: "No tenemos problema en ayudarte con cualquier consulta técnica. ¡Pregunta con confianza!"
   }
 ];
 
 const FeatureCard: React.FC<{ feature: Feature; index: number }> = ({ feature, index }) => {
   return (
-    <div 
+    <div
       className="bg-white rounded-xl p-6 shadow-soft hover:shadow-medium transition-all duration-300 transform hover:-translate-y-2"
       style={{ animationDelay: `${index * 100}ms` }}
     >
@@ -68,8 +53,8 @@ const Features: React.FC = () => {
             ¿Por qué elegir TechStore?
           </h2>
           <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-            Nos destacamos por ofrecer la mejor experiencia de compra, productos de calidad 
-            premium y un servicio al cliente excepcional.
+            TechStore es un emprendimiento dedicado a ofrecer productos tecnológicos
+            de alta calidad que combinan innovación, funcionalidad y diseño sin destruir tu bolsillo.
           </p>
         </div>
 
@@ -78,28 +63,6 @@ const Features: React.FC = () => {
           {features.map((feature, index) => (
             <FeatureCard key={index} feature={feature} index={index} />
           ))}
-        </div>
-
-        {/* Stats Section */}
-        <div className="mt-20 bg-white rounded-2xl shadow-medium p-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-primary-600 mb-2">10K+</div>
-              <div className="text-secondary-600">Clientes Satisfechos</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-primary-600 mb-2">500+</div>
-              <div className="text-secondary-600">Productos Disponibles</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-primary-600 mb-2">99%</div>
-              <div className="text-secondary-600">Satisfacción</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-primary-600 mb-2">24/7</div>
-              <div className="text-secondary-600">Soporte Técnico</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

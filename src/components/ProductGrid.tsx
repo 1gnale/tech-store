@@ -1,25 +1,40 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useCart, type Product } from '../context/CartContext';
 import productsData from '../data/products.json';
 
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
-  const { dispatch } = useCart();
+  const navigate = useNavigate();
+  const { dispatch, state } = useCart();
 
-  const addToCart = () => {
+  const isInCart = state.items.some(item => item.id === product.id);
+
+  const handleCartAction = () => {
     if (product.available) {
-      dispatch({ type: 'ADD_ITEM', payload: product });
+      if (isInCart) {
+        dispatch({ type: 'REMOVE_ITEM', payload: product.id });
+      } else {
+        dispatch({ type: 'ADD_ITEM', payload: product });
+      }
     }
+  };
+
+  const handleViewDetails = () => {
+    window.scrollTo(0, 0);
+    navigate(`/product/${product.id}`);
   };
 
   return (
     <div className="bg-white rounded-xl shadow-soft hover:shadow-medium transition-all duration-300 overflow-hidden group">
       {/* Product Image */}
-      <div className="relative bg-gradient-to-br from-primary-50 to-primary-100 p-8 text-center">
-        <div className={`text-6xl mb-4 group-hover:scale-110 transition-transform duration-300 ${
-          !product.available ? 'opacity-50' : ''
-        }`}>
-          {product.image}
-        </div>
+      <div className="relative bg-gradient-to-br from-primary-50 to-primary-100 p-8 text-center overflow-hidden h-64">
+        <img 
+          src={product.image}
+          alt={product.name}
+          className={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 ${
+            !product.available ? 'opacity-50' : ''
+          }`}
+        />
         
         {/* Badges */}
         <div className="absolute top-4 left-4 flex flex-col gap-2">
@@ -81,18 +96,33 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
           )}
         </div>
 
-        {/* Action Button */}
-        <button 
-          onClick={addToCart}
-          disabled={!product.available}
-          className={`w-full py-3 rounded-lg transition-colors font-semibold ${
-            product.available
-              ? 'bg-primary-600 text-white hover:bg-primary-700'
-              : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-          }`}
-        >
-          {product.available ? 'Agregar al Carrito' : 'Sin Stock'}
-        </button>
+        {/* Action Buttons */}
+        <div className="flex gap-3">
+          <button 
+            onClick={handleViewDetails}
+            className="flex-1 bg-secondary-600 text-white py-3 rounded-lg hover:bg-secondary-700 transition-colors font-semibold"
+          >
+            Ver Detalles
+          </button>
+          <button 
+            onClick={handleCartAction}
+            disabled={!product.available}
+            className={`flex-1 py-3 rounded-lg transition-colors font-semibold ${
+              product.available
+                ? isInCart
+                  ? 'bg-red-600 text-white hover:bg-red-700'
+                  : 'bg-primary-600 text-white hover:bg-primary-700'
+                : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+            }`}
+          >
+            {!product.available 
+              ? 'Sin Stock' 
+              : isInCart 
+                ? 'Quitar del Carrito' 
+                : 'Agregar al Carrito'
+            }
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -132,11 +162,16 @@ const ProductGrid: React.FC = () => {
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard 
+              key={product.id} 
+              product={product}
+            />
           ))}
         </div>
 
         {/* View All Button */}
+        {
+          products.length > 6 && (
         <div className="text-center mt-12">
           <button 
             onClick={handleToggleProducts}
@@ -145,13 +180,8 @@ const ProductGrid: React.FC = () => {
             {showAll ? 'Ver Solo Destacados' : `Ver Todos los Productos (${products.length - featuredProducts.length} más)`}
           </button>
         </div>
-
-        {/* Products Count */}
-        <div className="text-center mt-4">
-          <p className="text-secondary-500">
-            Mostrando {displayedProducts.length} de {products.length} productos
-          </p>
-        </div>
+          )
+        }
       </div>
     </section>
   );

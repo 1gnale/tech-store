@@ -1,7 +1,10 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import Cart from './Cart';
 
 const Header: React.FC = () => {
+  const location = useLocation();
+  const isProductDetail = location.pathname.startsWith('/product/');
 
   return (
     <header className="bg-white shadow-soft sticky top-0 z-50">
@@ -14,16 +17,18 @@ const Header: React.FC = () => {
             </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            <a href="#productos" className="text-secondary-600 hover:text-primary-600 transition-colors">
-              Productos
-            </a>
-            <a href="#caracteristicas" className="text-secondary-600 hover:text-primary-600 transition-colors">
-              Características
-            </a>
+          {/* Desktop Navigation - Solo visible en home */}
+          {!isProductDetail && (
+            <nav className="hidden md:flex space-x-8">
+              <a href="#productos" className="text-secondary-600 hover:text-primary-600 transition-colors">
+                Productos
+              </a>
+              <a href="#caracteristicas" className="text-secondary-600 hover:text-primary-600 transition-colors">
+                Características
+              </a>
 
-          </nav>
+            </nav>
+          )}
 
           {/* CTA Button and Cart */}
           <div className="hidden md:flex items-center space-x-4">

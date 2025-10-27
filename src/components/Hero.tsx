@@ -6,7 +6,9 @@ const Hero: React.FC = () => {
   const [featuredProduct, setFeaturedProduct] = useState<Product | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [progress, setProgress] = useState(0);
-  const { dispatch } = useCart();
+  const { dispatch, state } = useCart();
+
+  const isInCart = featuredProduct ? state.items.some(item => item.id === featuredProduct.id) : false;
 
   const getRandomProduct = () => {
     const products = productsData as Product[];
@@ -70,7 +72,11 @@ const Hero: React.FC = () => {
 
   const addToCart = () => {
     if (featuredProduct && featuredProduct.available) {
-      dispatch({ type: 'ADD_ITEM', payload: featuredProduct });
+      if (isInCart) {
+        dispatch({ type: 'REMOVE_ITEM', payload: featuredProduct.id });
+      } else {
+        dispatch({ type: 'ADD_ITEM', payload: featuredProduct });
+      }
     }
   };
 
@@ -99,8 +105,7 @@ const Hero: React.FC = () => {
               para tu vida diaria
             </h1>
             <p className="text-xl text-secondary-600 mb-8 leading-relaxed">
-              Descubre nuestra colección de auriculares Bluetooth, cargadores rápidos y 
-              accesorios tecnológicos de última generación. Calidad garantizada y diseño innovador.
+              Descubre nuestra colección de auriculares Bluetooth, cargadores rápidos y accesorios tecnológicos. ¡Aprovecha las mejores ofertas!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             </div>
@@ -112,10 +117,14 @@ const Hero: React.FC = () => {
               isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
             }`}>
               <div className="bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl p-8 text-center">
-                <div className={`w-32 h-32 mx-auto bg-white/20 rounded-full flex items-center justify-center mb-4 transition-all duration-300 ${
+                <div className={`w-48 h-48 mx-auto bg-white/20 rounded-full flex items-center justify-center mb-4 transition-all duration-300 overflow-hidden ${
                   isTransitioning ? 'scale-75 opacity-0' : 'scale-100 opacity-100'
                 }`}>
-                  <div className="text-6xl">{featuredProduct.image}</div>
+                  <img 
+                    src={featuredProduct.image} 
+                    alt={featuredProduct.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className={`text-white text-xl font-bold mb-2 transition-all duration-300 ${
                   isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
@@ -143,11 +152,18 @@ const Hero: React.FC = () => {
                     disabled={!featuredProduct.available}
                     className={`px-4 py-2 rounded-lg font-semibold backdrop-blur-sm transition-colors ${
                       featuredProduct.available
-                        ? 'bg-white/20 text-white hover:bg-white/30'
+                        ? isInCart
+                          ? 'bg-red-500/80 text-white hover:bg-red-600'
+                          : 'bg-white/20 text-white hover:bg-white/30'
                         : 'bg-gray-500/20 text-gray-300 cursor-not-allowed'
                     }`}
                   >
-                    {featuredProduct.available ? 'Agregar al Carrito' : 'Sin Stock'}
+                    {!featuredProduct.available 
+                      ? 'Sin Stock' 
+                      : isInCart 
+                        ? 'Quitar del Carrito' 
+                        : 'Agregar al Carrito'
+                    }
                   </button>
                 </div>
               </div>
