@@ -9,7 +9,7 @@ import ProductDetail from './pages/ProductDetail'
 import { CartProvider } from './context/CartContext'
 
 function App() {
-    const pageUrl = window.location.hostname;
+    const pageUrl = "https://tech-store-ruddy-ten.vercel.app/";
 
   return (
     <CartProvider>
