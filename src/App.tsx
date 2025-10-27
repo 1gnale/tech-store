@@ -9,6 +9,8 @@ import ProductDetail from './pages/ProductDetail'
 import { CartProvider } from './context/CartContext'
 
 function App() {
+    const pageUrl = window.location.href;
+
   return (
     <CartProvider>
       <Router>
@@ -25,7 +27,7 @@ function App() {
                 </>
               }
             />
-            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/product/:id" element={<ProductDetail pageUrl={pageUrl} />} />
           </Routes>
           <Footer />
         </div>

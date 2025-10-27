@@ -18,7 +18,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
       }
     }
   };
-
+  
   const handleViewDetails = () => {
     window.scrollTo(0, 0);
     navigate(`/product/${product.id}`);

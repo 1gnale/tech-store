@@ -5,7 +5,7 @@ import { useCart, type Product } from '../context/CartContext';
 import ImageCarousel from '../components/ImageCarousel';
 import productsData from '../data/products.json';
 
-const ProductDetail: React.FC = () => {
+const ProductDetail: React.FC<{pageUrl: string}> = ({pageUrl}: {pageUrl: string}) => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
     const { dispatch, state } = useCart();
@@ -42,8 +42,6 @@ const ProductDetail: React.FC = () => {
             }
         }
     };
-
-    const pageUrl = window.location.href;
 
     return (
         <main className="py-20 bg-white">
