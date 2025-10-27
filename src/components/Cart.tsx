@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import { useCart } from '../context/CartContext';
 
 const Cart: React.FC = () => {
   const { state, dispatch } = useCart();
   const [isOpen, setIsOpen] = useState(false);
+  const [discountCode, setDiscountCode] = useState('');
+  const [appliedCode, setAppliedCode] = useState<string | null>(null);
+  const discountsCodes = ["DELFI"];
+  const discountPercentage = 5;
 
   const updateQuantity = (id: number, quantity: number) => {
     dispatch({ type: 'UPDATE_QUANTITY', payload: { id, quantity } });
@@ -17,13 +22,47 @@ const Cart: React.FC = () => {
     dispatch({ type: 'CLEAR_CART' });
   };
 
+  const applyDiscountCode = () => {
+    if (discountsCodes.includes(discountCode.toUpperCase())) {
+      setAppliedCode(discountCode.toUpperCase());
+      setDiscountCode('');
+      toast.success(`¡Código "${discountCode.toUpperCase()}" aplicado! 5% de descuento`, {
+        position: 'top-right',
+        autoClose: 3000,
+      });
+    } else {
+      toast.error('Código de descuento inválido', {
+        position: 'top-right',
+        autoClose: 3000,
+      });
+    }
+  };
+
+  const removeDiscountCode = () => {
+    setAppliedCode(null);
+  };
+
+  const calculateDiscount = () => {
+    if (appliedCode) {
+      return state.total * (discountPercentage / 100);
+    }
+    return 0;
+  };
+
+  const discountAmount = calculateDiscount();
+  const finalTotal = state.total - discountAmount;
+
   const sendToWhatsApp = () => {
     const phoneNumber = '5493816378884';
     const productList = state.items
       .map(item => `- *${item.name}* por $*${item.price}* (x${item.quantity})`)
       .join('%0A');
     
-    const message = `¡Hola! Estoy interesado en los siguientes productos:%0A${productList}%0A%0A`;
+    let message = `¡Hola! Estoy interesado en los siguientes productos:%0A${productList}%0A%0ASubtotal: $*${state.total.toFixed(2)}*`;
+    
+    if (appliedCode) {
+      message += `%0ACódigo de descuento: *${appliedCode}* (-${discountPercentage}%)%0ADescuento: -$*${discountAmount.toFixed(2)}*%0ATotal con descuento: $*${finalTotal.toFixed(2)}*`;
+    }
     
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
@@ -126,14 +165,80 @@ const Cart: React.FC = () => {
                 )}
               </div>
 
+              {/* Discount Code Section */}
+              {state.items.length > 0 && (
+                <div className="border-t p-4 space-y-3">
+                  <h3 className="text-sm font-semibold text-secondary-900">Código de Descuento</h3>
+                  {!appliedCode ? (
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        value={discountCode}
+                        onChange={(e) => setDiscountCode(e.target.value.toUpperCase())}
+                        placeholder=""
+                        className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-600"
+                      />
+                      <button
+                        onClick={applyDiscountCode}
+                        disabled={!discountCode}
+                        className="px-3 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-semibold text-sm disabled:opacity-50"
+                      >
+                        Aplicar
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="flex items-center justify-between bg-green-50 p-3 rounded-lg">
+                      <div>
+                        <p className="text-sm font-semibold text-green-700">✓ {appliedCode}</p>
+                        <p className="text-xs text-green-600">-{discountPercentage}% aplicado</p>
+                      </div>
+                      <button
+                        onClick={removeDiscountCode}
+                        className="text-red-500 hover:text-red-700 p-1"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+
               {/* Footer */}
               {state.items.length > 0 && (
                 <div className="border-t p-4 space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-lg font-semibold">Total:</span>
-                    <span className="text-xl font-bold text-primary-600">
-                      ${state.total.toFixed(2)}
-                    </span>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-secondary-600">Subtotal:</span>
+                      <span className="text-sm font-semibold text-secondary-900">
+                        ${state.total.toFixed(2)}
+                      </span>
+                    </div>
+                    {appliedCode && (
+                      <>
+                        <div className="flex justify-between items-center text-green-600">
+                          <span className="text-sm">Descuento ({discountPercentage}%):</span>
+                          <span className="text-sm font-semibold">
+                            -${discountAmount.toFixed(2)}
+                          </span>
+                        </div>
+                        <div className="border-t pt-2 flex justify-between items-center">
+                          <span className="text-lg font-semibold">Total:</span>
+                          <span className="text-xl font-bold text-primary-600">
+                            ${finalTotal.toFixed(2)}
+                          </span>
+                        </div>
+                      </>
+                    )}
+                    {!appliedCode && (
+                      <div className="flex justify-between items-center">
+                        <span className="text-lg font-semibold">Total:</span>
+                        <span className="text-xl font-bold text-primary-600">
+                          ${state.total.toFixed(2)}
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   <div className="space-y-2">

@@ -29,7 +29,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, productName }) =>
       {/* Main Carousel */}
       <div className="relative w-full bg-gray-50 rounded-2xl overflow-hidden">
         {/* Images Container */}
-        <div className="relative h-3/4 overflow-hidden">
+        <div className="relative h-9/10 overflow-hidden">
           {/* Previous Image Peek */}
           <div className="absolute left-0 top-0 bottom-0 w-20 pointer-events-none bg-gradient-to-r from-gray-50 to-transparent z-10 overflow-hidden" />
           

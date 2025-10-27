@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { QRCodeSVG } from 'qrcode.react';
 import { useCart, type Product } from '../context/CartContext';
 import ImageCarousel from '../components/ImageCarousel';
 import productsData from '../data/products.json';
 
-const ProductDetail: React.FC<{pageUrl: string}> = ({pageUrl}: {pageUrl: string}) => {
+const ProductDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
     const { dispatch, state } = useCart();
@@ -73,55 +72,55 @@ const ProductDetail: React.FC<{pageUrl: string}> = ({pageUrl}: {pageUrl: string}
 
                     {/* Product Details */}
                     <div>
-                        <div className="text-sm text-primary-600 font-semibold mb-2">
+                        <div className="text-lg text-primary-600 font-semibold mb-4">
                             {product.category}
                         </div>
-                        <h1 className="text-4xl font-bold text-secondary-900 mb-2">
+                        <h1 className="text-5xl lg:text-6xl font-bold text-secondary-900 mb-4">
                             {product.name}
                         </h1>
 
                         {/* Price */}
-                        <div className="flex items-center gap-3">
-                            <span className="text-3xl font-bold text-primary-600">
+                        <div className="flex items-center gap-4 mb-6">
+                            <span className="text-4xl lg:text-5xl font-bold text-primary-600">
                                 ${product.price}
                             </span>
                             {product.originalPrice && (
                                 <>
-                                    <span className="text-3xl text-secondary-400 line-through">
+                                    <span className="text-4xl lg:text-5xl text-secondary-400 line-through">
                                         ${product.originalPrice}
                                     </span>
-                                    <span className="bg-red-100 text-red-600 px-2 py-1 rounded-full font-bold text-lg">
+                                    <span className="bg-red-100 text-red-600 px-4 py-2 rounded-full font-bold text-xl">
                                         -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
                                     </span>
                                 </>
                             )}
                         </div>
                         {/* Status */}
-                        <div className="flex gap-2 mb-1">
+                        <div className="flex gap-3 mb-6">
                             {!product.available && (
-                                <span className="bg-gray-500 text-white px-2 py-1 rounded-full font-bold">
+                                <span className="bg-gray-500 text-white px-4 py-2 rounded-full font-bold text-lg">
                                     Sin Stock
                                 </span>
                             )}
                             {product.isNew && product.available && (
-                                <span className="bg-green-500 text-white px-2 py-1 rounded-full font-bold">
+                                <span className="bg-green-500 text-white px-4 py-2 rounded-full font-bold text-lg">
                                     Nuevo
                                 </span>
                             )}
                             {product.isOnSale && product.available && (
-                                <span className="bg-red-500 text-white px-2 py-1 rounded-full font-bold">
+                                <span className="bg-red-500 text-white px-4 py-2 rounded-full font-bold text-lg">
                                     Oferta
                                 </span>
                             )}
                         </div>
 
                         {/* Features */}
-                        <div className="mb-5">
-                            <h2 className="text-2xl font-bold text-secondary-900 mb-1">Características:</h2>
-                            <ul className="space-y-3">
+                        <div className="mb-8">
+                            <h2 className="text-3xl lg:text-4xl font-bold text-secondary-900 mb-4">Características:</h2>
+                            <ul className="space-y-4">
                                 {product.features.map((feature, index) => (
-                                    <li key={index} className="text-lg text-secondary-600 flex items-center">
-                                        <svg className="w-6 h-6 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <li key={index} className="text-xl lg:text-2xl text-secondary-600 flex items-center">
+                                        <svg className="w-8 h-8 text-green-500 mr-4" fill="currentColor" viewBox="0 0 20 20">
                                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                         </svg>
                                         {feature}
@@ -131,11 +130,11 @@ const ProductDetail: React.FC<{pageUrl: string}> = ({pageUrl}: {pageUrl: string}
                         </div>
 
                         {/* Action Button */}
-                        <div className="mb-2">
+                        <div className="mb-4">
                             <button
                                 onClick={handleAddToCart}
                                 disabled={!product.available}
-                                className={`w-full py-3 rounded-lg transition-all font-semibold text-lg ${product.available
+                                className={`w-full py-4 rounded-lg transition-all font-semibold text-xl lg:text-2xl ${product.available
                                         ? isInCart
                                             ? 'bg-red-600 text-white hover:bg-red-700 active:scale-95'
                                             : 'bg-primary-600 text-white hover:bg-primary-700 active:scale-95'
@@ -152,35 +151,6 @@ const ProductDetail: React.FC<{pageUrl: string}> = ({pageUrl}: {pageUrl: string}
                                 }
                             </button>
                         </div>
-
-                        {/* QR Code Section */}
-                        <div className="mt-1 pt-1 border-gray-200">
-                            <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
-                                <h3 className="text-2xl font-bold text-secondary-900 mb-4">
-                                    Enlace a este producto
-                                </h3>
-                                <div className="bg-gray-50 p-2 rounded-2xl border-2 border-gray-200 mb-6">
-                                    <QRCodeSVG
-                                        value={pageUrl}
-                                        size={300}
-                                        level="H"
-                                        marginSize={2}
-                                        fgColor="#1e3a8a"
-                                        bgColor="#ffffff"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        {/* Copy URL Button */}
-                        <button
-                            onClick={() => {
-                                navigator.clipboard.writeText(pageUrl);
-                                alert('URL copiada al portapapeles');
-                            }}
-                            className="w-full py-2 border-2 border-primary-600 text-primary-600 rounded-lg hover:bg-primary-50 transition-colors font-semibold"
-                        >
-                            Copiar URL
-                        </button>
                     </div>
                 </div>
 
