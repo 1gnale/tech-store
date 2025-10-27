@@ -7,8 +7,15 @@ const Cart: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [discountCode, setDiscountCode] = useState('');
   const [appliedCode, setAppliedCode] = useState<string | null>(null);
-  const discountsCodes = ["DELFI"];
-  const discountPercentage = 5;
+  
+  const discountsCodes: { [key: string]: number } = {
+    "DELFI": 5,
+    "JOTATE": 10
+  };
+
+  const getDiscountPercentage = (code: string): number => {
+    return discountsCodes[code.toUpperCase()] || 0;
+  };
 
   const updateQuantity = (id: number, quantity: number) => {
     dispatch({ type: 'UPDATE_QUANTITY', payload: { id, quantity } });
@@ -23,10 +30,12 @@ const Cart: React.FC = () => {
   };
 
   const applyDiscountCode = () => {
-    if (discountsCodes.includes(discountCode.toUpperCase())) {
-      setAppliedCode(discountCode.toUpperCase());
+    const upperCode = discountCode.toUpperCase();
+    if (discountsCodes.hasOwnProperty(upperCode)) {
+      setAppliedCode(upperCode);
       setDiscountCode('');
-      toast.success(`¡Código "${discountCode.toUpperCase()}" aplicado! 5% de descuento`, {
+      const percentage = discountsCodes[upperCode];
+      toast.success(`¡Código "${upperCode}" aplicado! ${percentage}% de descuento`, {
         position: 'top-right',
         autoClose: 3000,
       });
@@ -44,13 +53,15 @@ const Cart: React.FC = () => {
 
   const calculateDiscount = () => {
     if (appliedCode) {
-      return state.total * (discountPercentage / 100);
+      const percentage = getDiscountPercentage(appliedCode);
+      return state.total * (percentage / 100);
     }
     return 0;
   };
 
   const discountAmount = calculateDiscount();
   const finalTotal = state.total - discountAmount;
+  const currentDiscountPercentage = appliedCode ? getDiscountPercentage(appliedCode) : 0;
 
   const sendToWhatsApp = () => {
     const phoneNumber = '5493816378884';
@@ -61,7 +72,8 @@ const Cart: React.FC = () => {
     let message = `¡Hola! Estoy interesado en los siguientes productos:%0A${productList}%0A%0ASubtotal: $*${state.total.toFixed(2)}*`;
     
     if (appliedCode) {
-      message += `%0ACódigo de descuento: *${appliedCode}* (-${discountPercentage}%)%0ADescuento: -$*${discountAmount.toFixed(2)}*%0ATotal con descuento: $*${finalTotal.toFixed(2)}*`;
+      const percentage = getDiscountPercentage(appliedCode);
+      message += `%0ACódigo de descuento: *${appliedCode}* (-${percentage}%)%0ADescuento: -$*${discountAmount.toFixed(2)}*%0ATotal con descuento: $*${finalTotal.toFixed(2)}*`;
     }
     
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
@@ -190,7 +202,7 @@ const Cart: React.FC = () => {
                     <div className="flex items-center justify-between bg-green-50 p-3 rounded-lg">
                       <div>
                         <p className="text-sm font-semibold text-green-700">✓ {appliedCode}</p>
-                        <p className="text-xs text-green-600">-{discountPercentage}% aplicado</p>
+                        <p className="text-xs text-green-600">-{currentDiscountPercentage}% aplicado</p>
                       </div>
                       <button
                         onClick={removeDiscountCode}
@@ -218,7 +230,7 @@ const Cart: React.FC = () => {
                     {appliedCode && (
                       <>
                         <div className="flex justify-between items-center text-green-600">
-                          <span className="text-sm">Descuento ({discountPercentage}%):</span>
+                          <span className="text-sm">Descuento ({currentDiscountPercentage}%):</span>
                           <span className="text-sm font-semibold">
                             -${discountAmount.toFixed(2)}
                           </span>

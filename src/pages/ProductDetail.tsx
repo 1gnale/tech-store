@@ -72,55 +72,55 @@ const ProductDetail: React.FC = () => {
 
                     {/* Product Details */}
                     <div>
-                        <div className="text-lg text-primary-600 font-semibold mb-4">
+                        <div className="text-sm sm:text-base lg:text-lg text-primary-600 font-semibold mb-2 sm:mb-3 lg:mb-4">
                             {product.category}
                         </div>
-                        <h1 className="text-5xl lg:text-6xl font-bold text-secondary-900 mb-4">
+                        <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-secondary-900 mb-3 sm:mb-4 lg:mb-6">
                             {product.name}
                         </h1>
 
                         {/* Price */}
-                        <div className="flex items-center gap-4 mb-6">
-                            <span className="text-4xl lg:text-5xl font-bold text-primary-600">
+                        <div className="flex flex-wrap items-center gap-2 sm:gap-3 lg:gap-4 mb-4 sm:mb-5 lg:mb-6">
+                            <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-primary-600">
                                 ${product.price}
                             </span>
                             {product.originalPrice && (
                                 <>
-                                    <span className="text-4xl lg:text-5xl text-secondary-400 line-through">
+                                    <span className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-secondary-400 line-through">
                                         ${product.originalPrice}
                                     </span>
-                                    <span className="bg-red-100 text-red-600 px-4 py-2 rounded-full font-bold text-xl">
+                                    <span className="bg-red-100 text-red-600 px-2 sm:px-3 lg:px-4 py-1 sm:py-2 rounded-full font-bold text-sm sm:text-base lg:text-lg">
                                         -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
                                     </span>
                                 </>
                             )}
                         </div>
                         {/* Status */}
-                        <div className="flex gap-3 mb-6">
+                        <div className="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-5 lg:mb-6">
                             {!product.available && (
-                                <span className="bg-gray-500 text-white px-4 py-2 rounded-full font-bold text-lg">
+                                <span className="bg-gray-500 text-white px-2 sm:px-3 lg:px-4 py-1 sm:py-2 rounded-full font-bold text-xs sm:text-sm lg:text-base">
                                     Sin Stock
                                 </span>
                             )}
                             {product.isNew && product.available && (
-                                <span className="bg-green-500 text-white px-4 py-2 rounded-full font-bold text-lg">
+                                <span className="bg-green-500 text-white px-2 sm:px-3 lg:px-4 py-1 sm:py-2 rounded-full font-bold text-xs sm:text-sm lg:text-base">
                                     Nuevo
                                 </span>
                             )}
                             {product.isOnSale && product.available && (
-                                <span className="bg-red-500 text-white px-4 py-2 rounded-full font-bold text-lg">
+                                <span className="bg-red-500 text-white px-2 sm:px-3 lg:px-4 py-1 sm:py-2 rounded-full font-bold text-xs sm:text-sm lg:text-base">
                                     Oferta
                                 </span>
                             )}
                         </div>
 
                         {/* Features */}
-                        <div className="mb-8">
-                            <h2 className="text-3xl lg:text-4xl font-bold text-secondary-900 mb-4">Características:</h2>
-                            <ul className="space-y-4">
+                        <div className="mb-6 sm:mb-7 lg:mb-8">
+                            <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-secondary-900 mb-3 sm:mb-4">Características:</h2>
+                            <ul className="space-y-2 sm:space-y-3 lg:space-y-4">
                                 {product.features.map((feature, index) => (
-                                    <li key={index} className="text-xl lg:text-2xl text-secondary-600 flex items-center">
-                                        <svg className="w-8 h-8 text-green-500 mr-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <li key={index} className="text-sm sm:text-base lg:text-lg text-secondary-600 flex items-start">
+                                        <svg className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-green-500 mr-2 sm:mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                         </svg>
                                         {feature}
@@ -130,11 +130,11 @@ const ProductDetail: React.FC = () => {
                         </div>
 
                         {/* Action Button */}
-                        <div className="mb-4">
+                        <div className="mb-4 sm:mb-6">
                             <button
                                 onClick={handleAddToCart}
                                 disabled={!product.available}
-                                className={`w-full py-4 rounded-lg transition-all font-semibold text-xl lg:text-2xl ${product.available
+                                className={`w-full py-2 sm:py-3 lg:py-4 rounded-lg transition-all font-semibold text-sm sm:text-base lg:text-lg ${product.available
                                         ? isInCart
                                             ? 'bg-red-600 text-white hover:bg-red-700 active:scale-95'
                                             : 'bg-primary-600 text-white hover:bg-primary-700 active:scale-95'
