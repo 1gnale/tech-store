@@ -136,7 +136,7 @@ const ProductGrid: React.FC = () => {
     setProducts(productsData as Product[]);
   }, []);
 
-  const featuredProducts = products.filter(product => product.featured);
+  const featuredProducts = products.slice(0, 6);
   const displayedProducts = showAll ? products : featuredProducts;
 
   const handleToggleProducts = () => {
