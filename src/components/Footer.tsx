@@ -7,10 +7,10 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Company Info */}
           <div className="text-center lg:text-left">
-            <h3 className="text-2xl font-bold mb-4">TechStore</h3>
+            <h3 className="text-2xl font-bold mb-4">TuPolirubro</h3>
             <p className="text-secondary-300 mb-6">
-              Tu tienda de confianza para productos tecnológicos de alta calidad.
-              Innovación y excelencia en cada producto.
+              Tu comercio de confianza para todo lo que necesitas.
+              Variedad, calidad y los mejores precios en un solo lugar.
             </p>
             <div className="flex justify-center lg:justify-start space-x-4">
               <a href="#" className="text-secondary-300 hover:text-white transition-colors">
@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="border-t border-secondary-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-secondary-300 text-sm">
-            © 2025 TechStore. Todos los derechos reservados.
+            © 2025 TuPoliRubro. Todos los derechos reservados.
           </p>
         </div>
       </div>

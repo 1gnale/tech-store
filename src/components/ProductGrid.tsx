@@ -153,8 +153,8 @@ const ProductGrid: React.FC = () => {
           </h2>
           <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
             {showAll 
-              ? 'Explora nuestra colección completa de productos tecnológicos premium.'
-              : 'Explora nuestra selección de productos tecnológicos de última generación, diseñados para mejorar tu experiencia digital diaria.'
+              ? 'Explora nuestra colección completa de productos para el hogar, oficina y más.'
+              : 'Descubre nuestra selección de productos destacados con la mejor calidad y precio.'
             }
           </p>
         </div>

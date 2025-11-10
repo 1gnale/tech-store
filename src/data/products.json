@@ -3,8 +3,8 @@
     "id": 1,
     "name": "Auriculares Air 31",
     "category": "Auriculares",
-    "price": 13500,
-    "originalPrice": 15000,
+    "price": 9500,
+    "originalPrice": 12000,
     "image": "https://i.ibb.co/SDm73R9W/IMG-20251024-WA0066.jpg",
     "images": [
       "https://i.ibb.co/SDm73R9W/IMG-20251024-WA0066.jpg",
@@ -28,8 +28,8 @@
     "id": 2,
     "name": "Smartwatch Ultra 8",
     "category": "Accesorios",
-    "price": 30000,
-    "originalPrice": 35500,
+    "price": 23000,
+    "originalPrice": 27000,
     "image": "https://i.ibb.co/8ws4G7G/IMG-20251024-WA0043.jpg",
     "images": [
       "https://i.ibb.co/tw3QwsWj/IMG-20251024-WA0044.jpg",
@@ -51,7 +51,7 @@
     "id": 3,
     "name": "Parlante Mini  A005",
     "category": "Parlantes",
-    "price": 13000,
+    "price": 11000,
     "image": "https://i.ibb.co/rRMhMztg/IMG-20251024-WA0045.jpg",
     "images": [
       "https://i.ibb.co/rRMhMztg/IMG-20251024-WA0045.jpg",
@@ -72,8 +72,8 @@
     "id": 4,
     "name": "Smartwatch Ultra 8 + Protector de pantalla",
     "category": "Accesorios",
-    "price": 32000,
-    "originalPrice": 38500,
+    "price": 25000,
+    "originalPrice": 30000,
     "image": "https://i.ibb.co/BK3VVJyB/IMG-20251024-WA0041.jpg",
     "images": [
       "https://i.ibb.co/BK3VVJyB/IMG-20251024-WA0041.jpg",
@@ -129,6 +129,116 @@
       "Protección total contra rayones",
       "Alta sensibilidad táctil",
       "Fácil instalación"
+    ],
+    "isNew": true,
+    "featured": true,
+    "available": true
+  },
+  {
+    "id": 7,
+    "name": "Mochila urbana",
+    "category": "Mochilas",
+    "price": 19000,
+    "image": "https://i.ibb.co/S7stwf92/IMG-20251108-WA0058.jpg",
+    "images": [
+      "https://i.ibb.co/S7stwf92/IMG-20251108-WA0058.jpg",
+      "https://i.ibb.co/DgWhLgL7/IMG-20251108-WA0060.jpg",
+      "https://i.ibb.co/F4Vdcq0G/IMG-20251108-WA0061.jpg",
+      "https://i.ibb.co/YnVV6dT/IMG-20251108-WA0062.jpg",
+      "https://i.ibb.co/cXyFRsH6/IMG-20251108-WA0063.jpg"
+    ],
+    "features": [
+      "Diseño minimalista y moderno",
+      "Múltiples compartimentos",
+      "Correas ergonómicas ajustables"
+    ],
+    "isNew": true,
+    "featured": true,
+    "available": true
+  },
+  {
+    "id": 8,
+    "name": "Combo mochila + morral y neceser",
+    "category": "Mochilas",
+    "price": 25000,
+    "originalPrice": 30000,
+    "image": "https://i.ibb.co/23C1x8G6/IMG-20251108-WA0066.jpg",
+    "images": [
+      "https://i.ibb.co/23C1x8G6/IMG-20251108-WA0066.jpg",
+      "https://i.ibb.co/0wgpxq4/IMG-20251108-WA0067.jpg",
+      "https://i.ibb.co/pBysBJgh/IMG-20251108-WA0068.jpg",
+      "https://i.ibb.co/6RZg3jvx/IMG-20251108-WA0069.jpg",
+      "https://i.ibb.co/Tq1MbZz6/IMG-20251108-WA0070.jpg",
+      "https://i.ibb.co/rfcgS06k/IMG-20251108-WA0072.jpg",
+      "https://i.ibb.co/gZM9Ztsz/Imagen-de-Whats-App-2025-11-07-a-las-17-40-23-c09d1f44.jpg"
+    ],
+    "features": [
+      "Conjunto de 3 piezas",
+      "Ahorro con combo",
+      "Material de calidad resistente",
+      "Perfecto para viajes y uso diario"
+    ],
+    "isOnSale": true,
+    "featured": true,
+    "available": true
+  },
+  {
+    "id": 9,
+    "name": "Cepillo limpia pelo",
+    "category": "Mascotas",
+    "price": 14000,
+    "image": "https://i.ibb.co/k6JymPrs/IMG-20251108-WA0045.jpg",
+    "images": [
+      "https://i.ibb.co/k6JymPrs/IMG-20251108-WA0045.jpg",
+      "https://i.ibb.co/3YskgnPT/IMG-20251108-WA0046.jpg"
+    ],
+    "features": [
+      "Limpieza efectiva",
+      "Libre de pelos",
+      "Fácil de usar y limpiar"
+    ],
+    "featured": true,
+    "available": true
+  },
+  {
+    "id": 10,
+    "name": "Termo metálico auto-cebante",
+    "category": "Bebidas",
+    "price": 19000,
+    "image": "https://i.ibb.co/wFbmFxv0/IMG-20251108-WA0047.jpg",
+    "images": [
+      "https://i.ibb.co/wFbmFxv0/IMG-20251108-WA0047.jpg",
+      "https://i.ibb.co/N2CDkn0V/IMG-20251108-WA0049.jpg",
+      "https://i.ibb.co/M5sf2XV0/IMG-20251108-WA0050.jpg",
+      "https://i.ibb.co/wNDcbF6q/IMG-20251108-WA0052.jpg"
+    ],
+    "features": [
+      "Mantiene el calor por horas",
+      "Diseño auto-cebante",
+      "Material metálico de calidad",
+      "Tapa hermética"
+    ],
+    "isNew": true,
+    "featured": true,
+    "available": true
+  },
+  {
+    "id": 11,
+    "name": "Parlante bluetooth Uni-retro",
+    "category": "Parlantes",
+    "price": 10000,
+    "image": "https://i.ibb.co/NdF6DwVg/IMG-20251108-WA0053.jpg",
+    "images": [
+      "https://i.ibb.co/NdF6DwVg/IMG-20251108-WA0053.jpg",
+      "https://i.ibb.co/G42LR895/IMG-20251108-WA0054.jpg",
+      "https://i.ibb.co/CKMV04MT/IMG-20251108-WA0055.jpg",
+      "https://i.ibb.co/F42Xw0Sj/IMG-20251108-WA0056.jpg"
+    ],
+    "features": [
+      "Diseño retro clásico",
+      "Sonido de alta calidad",
+      "Batería de larga duración",
+      "Conectividad Bluetooth estable"
     ],
     "isNew": true,
     "featured": true,

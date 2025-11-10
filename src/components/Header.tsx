@@ -13,7 +13,7 @@ const Header: React.FC = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="text-2xl font-bold text-primary-600">
-              TechStore
+              TuPolirubro
             </div>
           </div>
 

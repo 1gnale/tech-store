@@ -99,13 +99,11 @@ const Hero: React.FC = () => {
           {/* Text Content */}
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-6xl font-bold text-secondary-900 mb-6">
-              Tecnología
-              <span className="text-primary-600"> Premium</span>
-              <br />
-              para tu vida diaria
+              Todo lo que necesitas
+              <span className="text-primary-600"> en un solo lugar</span>
             </h1>
             <p className="text-xl text-secondary-600 mb-8 leading-relaxed">
-              Descubre nuestra colección de auriculares Bluetooth, cargadores rápidos y accesorios tecnológicos. ¡Aprovecha las mejores ofertas!
+              Descubre nuestra amplia variedad de productos para tu hogar, oficina y vida diaria. ¡Encuentra todo lo que buscas con las mejores ofertas!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             </div>

@@ -50,10 +50,10 @@ const Features: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-secondary-900 mb-4">
-            ¿Por qué elegir TechStore?
+            ¿Por qué elegir TuPolirubro?
           </h2>
           <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
-            TechStore es un emprendimiento dedicado a ofrecer productos tecnológicos
+            TuPolirubro es un emprendimiento dedicado a ofrecer productos tecnológicos
             de alta calidad que combinan innovación, funcionalidad y diseño sin destruir tu bolsillo.
           </p>
         </div>

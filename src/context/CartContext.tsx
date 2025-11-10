@@ -142,7 +142,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   // Cargar carrito desde localStorage al inicializar
   useEffect(() => {
-    const savedCart = localStorage.getItem('techstore-cart');
+    const savedCart = localStorage.getItem('tupolirubro-cart');
     if (savedCart) {
       try {
         const cartItems = JSON.parse(savedCart);
@@ -155,7 +155,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   // Guardar carrito en localStorage cuando cambie
   useEffect(() => {
-    localStorage.setItem('techstore-cart', JSON.stringify(state.items));
+    localStorage.setItem('tupolirubro-cart', JSON.stringify(state.items));
   }, [state.items]);
 
   return (
