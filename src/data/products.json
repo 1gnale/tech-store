@@ -138,7 +138,8 @@
     "id": 7,
     "name": "Mochila urbana",
     "category": "Mochilas",
-    "price": 19000,
+    "price": 17000,
+    "originalPrice": 20000,
     "image": "https://i.ibb.co/cXyFRsH6/IMG-20251108-WA0063.jpg",
     "images": [
       "https://i.ibb.co/S7stwf92/IMG-20251108-WA0058.jpg",
